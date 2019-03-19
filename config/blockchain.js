@@ -56,9 +56,9 @@ module.exports = {
     mineWhenNeeded: true, // Uses our custom script (if isDev is false) to mine only when needed
     nodiscover: true, // Disables the peer discovery mechanism (manual peer addition)
     maxpeers: 0, // Maximum number of network peers (network disabled if set to 0) (default: 25)
-    proxy: true, // Proxy is used to present meaningful information about transactions
+    proxy: false, // Proxy is used to present meaningful information about transactions
     targetGasLimit: 8000000, // Target gas limit sets the artificial target gas floor for the blocks to mine
-    simulatorBlocktime: 5 // Specify blockTime in seconds for automatic mining. Default is 0 and no auto-mining.
+    simulatorBlocktime: 2 // Specify blockTime in seconds for automatic mining. Default is 0 and no auto-mining.
   },
 
   // merges with the settings in default

@@ -9,7 +9,7 @@ export const createVtxStore = () => {
     // You can configure some parameters here to inject them with the initial state
     const initial_state = configureVtx(getInitialState(), {
         poll_timer: 100,
-        confirmation_treshold: 5
+        confirmation_treshold: 3
     });
 
     // Recover the vortex reducers. This method takes your custom reducers and combines them with vortex's
