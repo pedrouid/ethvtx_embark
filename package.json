@@ -7,10 +7,9 @@
   "author": "Iulian Rotaru",
   "license": "MIT",
   "dependencies": {
-    "embark": "^4.0.0-beta.2",
-    "embarkjs": "file:../../../../tmp/embarkjs-4.0.0.tgz",
-    "embarkjs-connector-web3": "^4.0.0-beta.1",
-    "ethvtx": "git://github.com/horyus/ethvtx.git#feature/27.framework-helpers",
+    "embark": "^4.0.1",
+    "embarkjs-connector-web3": "^4.0.0",
+    "ethvtx": "^2.0.0",
     "grommet": "^2.5.5",
     "react": "^16.3.2",
     "react-bootstrap": "0.32.1",
