@@ -30,7 +30,8 @@ export const setupWeb3 = async (store) => {
             // Loading an instance BEFORE starting the store will check on the chain if the correct bytecode is found, and if not, the WrongNet status is applied
             loadContractInstance(store.dispatch, 'SimpleStorage', SimpleStorage.address, {
                 alias: '@simplestorage',
-                permanent: true
+                permanent: true,
+                balance: true
             });
 
             // Loading a permanent account before starting the store will keep it even after resets

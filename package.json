@@ -9,7 +9,7 @@
   "dependencies": {
     "embark": "^4.0.1",
     "embarkjs-connector-web3": "^4.0.0",
-    "ethvtx": "^2.0.1",
+    "ethvtx": "^2.0.2",
     "grommet": "^2.5.5",
     "react": "^16.3.2",
     "react-bootstrap": "0.32.1",
