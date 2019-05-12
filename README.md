@@ -8,7 +8,7 @@ This is an Embark template showcasing the features of `ethvtx`.
 
 | `embark` | `ethvtx` |
 | :------: | :------: |
-| 4.0.1 | 2.0.2 |
+| 4.1.0-beta.0 | 2.0.6 |
 
 ### Run the app
 
