@@ -5,38 +5,21 @@ import EmbarkJs from 'Embark/EmbarkJS';
 import { start, setWeb3, authorizeAndSetWeb3 } from 'ethvtx/lib/dispatchers';
 import { embark } from 'ethvtx/lib/utils';
 import SimpleStorage from 'Embark/contracts/SimpleStorage';
+import WalletConnectProvider from '../walletconnect-web3-provider'
 
 export const setupWeb3 = async (store) => {
 
     return new Promise((ok, ko) => {
 
         EmbarkJs.onReady(async () => {
+            // instantiate walletconnect provider
+            const provider = new WalletConnectProvider({ bridge: "https://bridge.walletconnect.org" })
 
-            if (EmbarkJs.enableEthereum) {
+            // inject provider into new web3 instance
+            const web3 = new Web3(provider);
 
-                const web3_getter = () => {
-
-                    const web3 = new Web3(EmbarkJs.Blockchain.Providers.web3.getCurrentProvider());
-
-                    return web3;
-
-                };
-
-                await authorizeAndSetWeb3(store.dispatch, {
-                    enable: EmbarkJs.enableEthereum,
-                    web3: web3_getter
-                });
-
-            } else {
-                // Recover the Web3 instance created by Embark
-                const embark_web3 = EmbarkJs.Blockchain.Providers.web3.web3;
-
-                // Extract the provider to build a very specific version of web3 (in our case web3@1.0.0-beta.32 is the best working version)
-                const provider = embark_web3.currentProvider;
-                const web3 = new Web3(provider);
-                // Set the web3 instance in the store
-                setWeb3(store.dispatch, web3);
-            }
+            // Set the web3 instance in the store
+            setWeb3(store.dispatch, web3);
 
             // Initialize the Store's contract manager
             VtxContract.init(store);
